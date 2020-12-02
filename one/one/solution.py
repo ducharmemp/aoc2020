@@ -27,6 +27,8 @@ def find_candidate(*, input_records, target_sum, num_entries):
     check_set = set(input_records)
     for candidate_set in combinations(input_records, num_entries - 1):
         possibility = target_sum - sum(candidate_set)
+        # Not exactly right, but I'll leave this as-is. The more correct and fastest approach (I think) would be to have a head and tail pointer
+        # that would increment/decrement through the input_records. This approach would mess up on the input of [4, 4] with a size of 2 and target of 8
         if possibility in check_set and possibility not in candidate_set:
             return (*candidate_set, possibility)
 
