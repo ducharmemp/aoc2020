@@ -33,7 +33,7 @@ module Six
   def self.parse_args
     filename = ""
     OptionParser.parse do |parser|
-      parser.banner = "Welcome to The Beatles App!"
+      parser.banner = "Day Six of AOC"
 
       parser.on "-v", "--version", "Show version" do
         puts "version #{VERSION}"
