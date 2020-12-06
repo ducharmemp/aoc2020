@@ -15,7 +15,7 @@ module Six
     end
   end
 
-  def self.solution1(groups)
+  def self.solution2(groups)
     answers = [] of Set(Char)
 
     groups.each do |group|
@@ -54,6 +54,7 @@ module Six
   def self.cli
     input = File.read(parse_args)
     puts solution1 input.chomp.split("\n\n")
+    puts solution2 input.chomp.split("\n\n")
   end
 end
 
