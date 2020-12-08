@@ -37,7 +37,7 @@ proc walkFrom*(g: Graph, entry: string, typ: RelationshipType = RelationshipType
     for neighbor in g.neighbors[tail].filter(neighbor => neighbor[1] == typ):
       if neighbor[2] in path:
         continue
-      
+
       stack.add(neighbor[2])
 
   path
@@ -51,7 +51,6 @@ proc sumFrom*(g: Graph, entry: string, typ: RelationshipType = RelationshipType.
 
     for neighbor in g.neighbors[entry].filter(neighbor => neighbor[1] == typ):
       let innerVal = inner(neighbor[2], typ, seen=seen)
-      echo neighbor, " ", total, " ", innerVal
       seen.add(neighbor[2])
       total += neighbor[0] * innerVal
 
