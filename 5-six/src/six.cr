@@ -21,7 +21,7 @@ module Six
     groups.each do |group|
       answer_sets = group.lines(chomp=true).map(&.chars).map(&.to_set)
       answers << answer_sets.reduce(Set.new('a'..'z')) do |acc, answer|
-        acc &= answer
+        acc & answer
       end
     end
 
